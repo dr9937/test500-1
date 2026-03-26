@@ -75,4 +75,9 @@ class VetController {
 		return vets;
 	}
 
+	@GetMapping("/trigger-500")
+    public String trigger500() {
+        throw new RuntimeException("这是一个故意触发的500错误");
+    }
+
 }
