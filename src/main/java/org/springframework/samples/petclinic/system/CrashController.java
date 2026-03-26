@@ -28,6 +28,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 class CrashController {
 
+	@GetMapping("/trigger-500")
+    public String trigger500() {
+        throw new RuntimeException("这是一个故意触发的500错误");
+    }
+	
 	@GetMapping("/oups")
 	public String triggerException() {
 		throw new RuntimeException(
